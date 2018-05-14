@@ -1,5 +1,3 @@
-PYTHON := python3
-
 all: update-ca-certificates c_rehash certdata.stamp
 
 update-ca-certificates: update-ca.c
@@ -8,8 +6,11 @@ update-ca-certificates: update-ca.c
 c_rehash: c_rehash.c
 	${CC} ${CFLAGS} -o $@ c_rehash.c -lcrypto ${LDFLAGS}
 
+certdata2pem: certdata2pem.c
+	${CC} ${CFLAGS} -o $@ certdata2pem.c ${LDFLAGS}
+
 certdata.stamp:
-	${PYTHON} certdata2pem.py
+	./certdata2pem
 	touch $@
 
 install: all
