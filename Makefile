@@ -30,6 +30,6 @@ install: all
 	install -m755 c_rehash ${DESTDIR}/usr/bin
 
 clean:
-	rm -rf update-ca-certificates c_rehash certdata.stamp *.crt
+	rm -rf update-ca-certificates c_rehash certdata2pem certdata.stamp *.crt
 
 .PHONY: install clean
