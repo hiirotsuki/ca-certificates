@@ -1,4 +1,4 @@
-all: update-ca-certificates c_rehash certdata2pem
+all: update-ca-certificates c_rehash certdata2pem certdata2pem_host
 
 update-ca-certificates: update-ca.c
 	${CC} ${CFLAGS} -o $@ update-ca.c ${LDFLAGS}
