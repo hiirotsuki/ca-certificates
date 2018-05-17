@@ -331,8 +331,8 @@ int main(int a, char **v)
 
 	/* Execute run-parts */
 	static const char *run_parts_args[] = { "run-parts", RUNPARTSDIR, 0 };
-	execve("/usr/bin/run-parts", run_parts_args, NULL);
-	execve("/bin/run-parts", run_parts_args, NULL);
+	execv("/usr/bin/run-parts", run_parts_args);
+	execv("/bin/run-parts", run_parts_args);
 	perror("run-parts");
 
 	return 1;
