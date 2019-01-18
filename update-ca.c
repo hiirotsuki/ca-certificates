@@ -14,6 +14,14 @@
 
 #define ARRAY_SIZE(x) (sizeof(x) / sizeof((x)[0]))
 
+#ifndef SYMLINK_MAX
+#ifdef _POSIX_SYMLINK_MAX
+#define SYMLINK_MAX _POSIX_SYMLINK_MAX
+#else
+#define SYMLINK_MAX 255
+#endif
+#endif
+
 #define CERTSDIR "/usr/share/ca-certificates/"
 #define LOCALCERTSDIR "/usr/local/share/ca-certificates/"
 #define ETCCERTSDIR "/etc/ssl/certs/"
